@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #000000;
+}
+
+header{
+    background-color: aquamarine;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main{
+    background-color: rgb(19, 19, 89);
+    align-items: center;
+}
+
+#presentacion{
+    padding: 250px;
+    text-align: center;
+}
+
+#trabajos{
+    padding-top: 90px;
+    margin-left: 10%;
+}
+
+#trabajos h2{
+    margin-bottom: 10px;
+}
+
+.trabajo {
+    padding: 15px;
+    background-color: #f2f2f2;
+    width: 25%;
+    height: 30px;
+    border: 2px solid #000000;
+}
+
+
