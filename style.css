@@ -1,0 +1,443 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #000000;
+}
+
+header {  
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.topbar {
+    background-color: rgb(24, 93, 152);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbar .contacto {
+    display: flex;
+    gap: 40px;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: aliceblue;
+    border-bottom: 2px solid #000;
+    padding: 20px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.navbar nav ul li a {
+    position: relative; /* 🔧 Necesario para que ::after se ubique bien */
+    text-decoration: none;
+    color: #003366;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #003366;
+    transition: width 0.3s ease;
+}
+
+.navbar nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+main{
+    align-items: center;
+    background-color: aliceblue;
+}
+
+#presentacion{
+    padding: 300px;
+    text-align: center;
+}
+
+#trabajos{
+    padding: 100px;
+    background-color: aliceblue;
+}
+
+.contenedor-trabajos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.trabajo {
+    height: 250px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    transition: border 0.3s ease;
+    border-radius: 20px;
+    background-color: rgb(249, 255, 255);
+}
+
+.trabajo h3 {
+    margin-top: 90px;
+    font-size: 17px;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.6s ease;
+    z-index: 2;
+}
+
+.trabajo .descripcion {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    font-size: 14px;
+    color: #333;
+    z-index: 1;
+}
+
+.trabajo:hover h3 {
+    transform: translateY(-50px);
+}
+
+.trabajo:hover {
+    border-bottom: 8px solid #003366;
+}
+
+.trabajo:hover .descripcion {
+    opacity: 1;
+    transform: translateY(0);
+    color: black;
+}
+
+#nosotros{
+    padding: 150px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 50px;
+    border-radius: 50px;
+}
+
+#nosotros h2{
+    margin-bottom: 20px;
+    color: #003366;
+    font-size: 32px;
+}
+
+#nosotros img{
+    margin-top: 20px;
+}
+
+#servicios{
+    padding: 10%;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+#servicios h2{
+    margin-bottom: 100px;
+    color: #003366;
+    font-size: 32px;
+}
+
+.contenedor-servicios{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.servicio{
+    background-color: aliceblue;
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+.servicio img{
+    margin-top: -30px;
+    transition: transform 0.6s ease;
+}
+
+.servicio h3{
+    min-height: 45px;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.servicio p{
+    padding: 20px;
+    font-size: 14px;
+}
+
+.servicio:hover img {
+    transform: translateY(-30px);
+}
+
+#certificacion-habilitaciones{
+    padding: 10%;
+    background-color: aliceblue;
+}
+
+#certificacion-habilitaciones h2{
+    margin-bottom: 20px;
+    color: #003366;
+    font-size: 32px;
+}
+
+#certificacion-habilitaciones p{
+    margin-bottom: 20px;
+}
+
+.certificacion{
+    border-bottom: 1px solid #aaa;
+    padding: 15px;
+    width: 60%;
+}
+
+.certificacion h3{
+    font-size: 14px;
+}
+
+.certificacion p{
+    font-size: 14px;
+}
+
+#clientes {
+    padding: 150px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+#clientes h2 {
+    font-size: 32px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+#clientes p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.grid-clientes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cliente {
+    background-color: aliceblue;
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.cliente:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#contacto {
+    background-color: rgb(33, 32, 32);
+    height: 280px;
+    color: #000;
+    display: flex;
+    gap: 60px;
+}
+
+.logo{
+    margin-left: 48%;
+    padding-top: 80px;
+}
+
+.logo img{
+    height: 80px;
+    width: 80px;
+}
+
+.datos {
+    margin-left: 0%;
+    padding-top: 80px;
+}
+
+.datos p{
+    color:rgb(194, 194, 194);
+    font-size: 14px;
+}
+
+.otra-info{
+    display: flex;
+    margin-top: 80px;
+    gap: 10px;
+}
+
+.red {
+    background-color: aliceblue;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.red a img{
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+}
+
+footer{
+    height: 80px;
+    background-color:rgb(33, 32, 32);
+    border-top: 1px solid rgb(82, 82, 82);
+}
+
+footer p{
+    color: rgb(194, 194, 194);
+    font-size: 14px;
+    margin-left: 10%;
+    padding-top: 30px;
+}
+
+/* Adaptaciones para móvil */
+@media screen and (max-width: 768px) {
+
+    header {
+    position: static;
+    }
+
+    .topbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    }
+
+    .topbar .contacto {
+    flex-direction: column;
+    gap: 5px;
+    }
+
+    .navbar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    height: 100px;
+    }
+
+    #presentacion,
+    #trabajos,
+    #nosotros,
+    #servicios,
+    #certificacion-habilitaciones,
+    #clientes {
+    padding: 40px 20px;
+    }
+
+    .contenedor-trabajos,
+    .contenedor-servicios {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .trabajo,
+    .servicio,
+    .certificacion {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    }
+
+    .trabajo h3 {
+    margin-top: 50px;
+    font-size: 16px;
+    }
+
+    .trabajo .descripcion {
+    font-size: 13px;
+    }
+
+    #nosotros {
+    margin: 20px 0;
+    }
+
+    #servicios h2,
+    #certificacion-habilitaciones h2,
+    #clientes h2 {
+    font-size: 26px;
+    }
+
+    #clientes p {
+    font-size: 16px;
+    }
+
+    .grid-clientes {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+    }
+
+    #contacto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 30px 20px;
+    }
+
+    .logo {
+    margin-left: 0;
+    padding-top: 0;
+    margin-bottom: 20px;
+    }
+
+    .datos {
+    padding-top: 0;
+    }
+
+    .otra-info {
+    margin-top: 20px;
+    justify-content: center;
+    }
+
+    footer p {
+    margin-left: 0;
+    text-align: center;
+    padding-top: 20px;
+    }
+}
+
