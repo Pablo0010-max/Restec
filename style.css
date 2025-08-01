@@ -33,6 +33,14 @@ header {
     gap: 40px;
 }
 
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon {
+    display: none; /* esto oculta el ícono en escritorio */
+}
+
 /* Barra de navegación */
 .navbar {
     background-color: aliceblue;
@@ -337,107 +345,149 @@ footer p{
 /* Adaptaciones para móvil */
 @media screen and (max-width: 768px) {
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     header {
-    position: static;
+        position: static;
     }
 
     .topbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
     }
 
     .topbar .contacto {
-    flex-direction: column;
-    gap: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 
     .navbar nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0;
-    height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+        height: auto;
+    }
+    
+    .menu-icon {
+        display: block; /* solo se muestra en móvil */
     }
 
-    #presentacion,
+    .navbar nav .menu {
+        display: flex;
+        max-height: 0;
+        opacity: 0;
+        gap: 15px;
+        transition: max-height 1s ease, opacity 1s ease;
+    }
+
+    #menu-toggle:checked + .menu-icon + nav .menu {
+        display: flex;
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    #presentacion{
+        padding: 300px 20px;
+    }
+    
     #trabajos,
     #nosotros,
     #servicios,
     #certificacion-habilitaciones,
     #clientes {
-    padding: 40px 20px;
+        padding: 60px 20px;
     }
 
     .contenedor-trabajos,
     .contenedor-servicios {
-    flex-direction: column;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .trabajo,
     .servicio,
     .certificacion {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .trabajo h3 {
-    margin-top: 50px;
-    font-size: 16px;
+        margin-top: 50px;
+        font-size: 16px;
     }
 
     .trabajo .descripcion {
-    font-size: 13px;
+        font-size: 13px;
     }
 
     #nosotros {
-    margin: 20px 0;
+        margin: 20px 0;
     }
 
     #servicios h2,
     #certificacion-habilitaciones h2,
     #clientes h2 {
-    font-size: 26px;
+        font-size: 26px;
+        text-align: center;
     }
 
     #clientes p {
-    font-size: 16px;
+        font-size: 16px;
+        text-align: center;
     }
 
     .grid-clientes {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 10px;
     }
 
     #contacto {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 30px 20px;
     }
 
     .logo {
-    margin-left: 0;
-    padding-top: 0;
-    margin-bottom: 20px;
+        margin-left: 0;
+        padding-top: 0;
+        margin-bottom: 20px;
     }
 
     .datos {
-    padding-top: 0;
+        padding-top: 0;
     }
 
     .otra-info {
-    margin-top: 20px;
-    justify-content: center;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
     }
 
     footer p {
-    margin-left: 0;
-    text-align: center;
-    padding-top: 20px;
+        margin-left: 0;
+        text-align: center;
+        padding-top: 20px;
     }
 }
 
